@@ -10,11 +10,11 @@ const {
 } = process.env
 
 module.exports = {
-    title: META_TITLE || 'Emergency Site',
+    title: META_TITLE || "Andrew Hudson's Site",
     url: META_URL || '',
-    description: META_DESC || 'An emergency information website.',
+    description: META_DESC || 'Bleurgh',
     lang: META_LANG || 'en',
-    primaryColor: META_COLOR || '#DB0000',
+    primaryColor: META_COLOR || '#F5D300',
     email: META_EMAIL || undefined,
     telephone: META_TELEPHONE || undefined,
     dateFormat: 'dd LLLL yyyy'

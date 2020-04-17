@@ -1,5 +1,11 @@
 ---
 layout: base
+tags:
+  - nav
+navtitle: Home
 ---
 
+{% set postslist = collections.posts | firstNElements(-10) %}
 {% include "postlist.njk" %}
+
+<p>All posts can be found in <a href="{{ '/archive/' | url }}">the archive</a>.</p>
