@@ -4,7 +4,33 @@ tags:
   - nav
 navtitle: Archive
 date: 2018-01-02
+pagination:
+  data: collections.posts
+  size: 10
+  reverse: true
+permalink: /archive/{% if pagination.pageNumber >- 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}index.html
 ---
 
-{% set postslist = collections.posts %}
+<h2>Archive {% if pagination.pageNumber > 0 %}Page {{ pagination.pageNumber + 1 }}{% endif %}</h2>
+
+{% set postslist = pagination.items | reverse %}
 {% include "postlist.njk" %}
+
+
+<div class="page-selector">
+	{% if pagination.previousPageHref %}
+	<a href="{{ pagination.previousPageHref }}" class="page-numbers page-pagination">
+		Previous
+	</a>
+	{% else %}
+	<span class="page-numbers">Previous</span>
+	{% endif %}
+	<span class="page-numbers page-total">
+	Page: {{ pagination.pageNumber + 1 }} of {{ pagination.links | length  }}
+	</span>
+	{% if pagination.nextPageHref %}
+	<a href="{{ pagination.nextPageHref }}" class="page-numbers page-pagination page-numbers--next">Next</a>
+	{% else %}
+	<span class="page-numbers page-numbers--next">Next</span>
+	{% endif %}
+</div>

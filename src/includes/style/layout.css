@@ -49,3 +49,17 @@ html {
     background-color: #f0f0f0;
     border-top: 1px solid #d4d4d4;
 }
+
+.page-selector {
+    margin-top: 1.5em;
+    padding-top: 1.5em;
+    border-top: 1px solid grey;
+
+    display: grid;
+
+    grid-template-columns: 1fr auto 1fr;
+}
+
+.page-numbers--next {
+    text-align: right;
+}

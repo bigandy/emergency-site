@@ -5,6 +5,9 @@
         <time datetime="{{ post.date | dateToFormat('yyyy-LL-dd') }}">
             ({{ post.date | dateToFormat(meta.dateFormat) }})
         </time>
+        {%- if post.data.description -%}
+           <div>{{ post.data.description }}</div>
+        {%- endif -%}
     </li>
 {% endfor %}
 </ol>
